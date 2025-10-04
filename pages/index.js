@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
@@ -10,14 +10,17 @@ import AirportForm from '../components/AirportForm';
 const HomePage = () => {
     const dispatch = useDispatch();
     const activeForm = useSelector((state) => state.formType.activeForm);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const renderForm = () => {
         switch (activeForm) {
-            case 'outstation': return <OutstationForm />;
-            case 'local': return <LocalForm />;
-            case 'airport': return <AirportForm />;
-            default: return <OutstationForm />;
+            case 'outstation':
+                return <OutstationForm />;
+            case 'local':
+                return <LocalForm />;
+            case 'airport':
+                return <AirportForm />;
+            default:
+                return <OutstationForm />;
         }
     };
 
@@ -36,24 +39,19 @@ const HomePage = () => {
                 <div className="logo-container">
                     <Image src="/logo.svg" alt="Yatri Cabs Logo" layout="fill" objectFit="contain" />
                 </div>
-                 <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-                    <div className="contact-info">
-                         <div className="contact-logo-container">
-                            <Image src="/24by7 logo.svg" alt="24/7 Support" layout="fill" objectFit="contain" />
-                        </div>
-                    </div>
-                    <div className="header-actions">
-                        <div className="header-action-icon">
-                            <Image src="/nav_download_img.svg" alt="Download App" layout="fill" objectFit="contain" />
-                        </div>
-                        <div className="header-action-icon">
-                            <Image src="/nav_hi_rahul.png" alt="User Profile" layout="fill" objectFit="contain" />
-                        </div>
+                <div className="contact-info">
+                    <div className="contact-logo-container">
+                        <Image src="/24by7 logo.svg" alt="24x7 Support" layout="fill" objectFit="contain"/>
                     </div>
                 </div>
-                <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle navigation menu">
-                    <i className={isMenuOpen ? "fas fa-times" : "fas fa-bars"}></i>
-                </button>
+                <div className="header-actions">
+                    <div className="header-action-icon">
+                        <Image src="/nav_download_img.svg" alt="Download App" layout="fill" objectFit="contain"/>
+                    </div>
+                    <div className="header-action-icon">
+                        <Image src="/nav_hi_rahul.png" alt="User Profile" layout="fill" objectFit="contain"/>
+                    </div>
+                </div>
             </header>
 
             
@@ -275,5 +273,86 @@ const HomePage = () => {
                         <div className="testimonial-card">
                             <div className="stars">★★★★★</div>
                             <p>&quot;I used Yatri Cabs for my one-way trip from Lucknow to Varanasi, and I was genuinely surprised by how much I saved! The 50% off claim is real, and it was significantly cheaper than taking a train. The car was clean, and the driver was professional. Highly recommend!&quot;</p>
-                            <h4>
+                            <h4>Vikram Kulkarni</h4>
+                            <span>Kalyan, Maharashtra</span>
+                        </div>
+                        <div className="testimonial-card">
+                            <div className="stars">★★★★★</div>
+                            <p>&quot;The GPS-based billing system is a game-changer. I always worried about drivers tampering with meters on long intercity rides, but with Yatri Cabs, everything was transparent and real-time. It gave me complete peace of mind. Excellent service for my trip to Ayodhya!&quot;</p>
+                            <h4>Rajesh Kumawat</h4>
+                            <span>Kanpur, Uttar Pradesh</span>
+                        </div>
+                        <div className="testimonial-card">
+                            <div className="stars">★★★★★</div>
+                            <p>&quot;Traveling with my family from Gorakhpur to Prayagraj was so comfortable with Yatri Car Rental. We chose an SUV, and it was spacious and well-maintained. The driver was courteous and knowledgeable about the route. It made our pilgrimage hassle-free and enjoyable.&quot;</p>
+                            <h4>Anjali Mishra</h4>
+                            <span>Gorakhpur, Uttar Pradesh</span>
+                        </div>
+                        <div className="testimonial-card">
+                            <div className="stars">★★★★★</div>
+                            <p>&quot;As a frequent business traveler, finding a reliable one-way cab service that doesn&apos;t charge for a return journey is crucial. Yatri Cabs delivers exactly that. Their 24/7 support and easy booking process through the app make my life so much simpler. They&apos;re my go-to for intercity travel now.&quot;</p>
+                            <h4>Siddharth Vaidya</h4>
+                            <span>Rohini, Delhi</span>
+                        </div>
+                    </div>
+                </section>
+                
+            </main>
+
+            <footer className="main-footer">
+                <div className="footer-top">
+                    <div className="footer-promo-card app-promo">
+                        <div className="app-promo-images">
+                            <div className="app-promo-img-container">
+                                <Image src="/eleventh_frame_1.png" layout="fill" objectFit="contain" alt="App Screen 1" />
+                            </div>
+                        </div>
+                        <div className="app-promo-text">
+                            <h2>GET YOUR <strong>YATRI CABS</strong> APP NOW!</h2>
+                            <p>USE CODE <strong>WELCOMEYATRI</strong> AND GET <strong>FLAT 05%</strong> OFF* ON YOUR FIRST INTERCITY RIDE</p>
+                            <div className="app-buttons-container footer-app-buttons">
+                                <Image src="/first_frame_download_now.png" layout="fill" objectFit="contain" alt="Download on Google Play and App Store" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="footer-promo-card driver-promo">
+                        <h2>BECOME A <strong>DRIVER PARTNER</strong></h2>
+                        <p>Join <strong>Yatri Car Rental</strong> And Attach Your Car To Our Platform. Earn More By Serving Our Passengers And Benefit From Our Extensive Customer Base.</p>
+                        <button className="download-app-btn">DOWNLOAD THE APP</button>
+                    </div>
+                </div>
+                <div className="operational-cities">
+                    <p>
+                        <strong>Operational Cities:</strong>
+                        <span>Lucknow</span>
+                        <span>Ayodhya</span>
+                        <span>Gorakhpur</span>
+                        <span>Varanasi</span>
+                        <span>Allahabad (Prayagraj)</span>
+                        <span>Kanpur</span>
+                    </p>
+                </div>
+                <div className="footer-bottom">
+                    <div className="footer-logo">
+                            <div className="footer-logo-container">
+                                <Image src="/logo.svg" alt="Yatri Cabs Footer Logo" layout="fill" objectFit="contain" />
+                            </div>
+                    </div>
+                    <nav className="footer-nav">
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Career</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms & Condition</a>
+                    </nav>
+                    <p className="copyright">All Copyrights are reserved by YATRI CABS</p>
+                </div>
+            </footer>
+        </div>
+    );
+};
+
+export default HomePage;
 
