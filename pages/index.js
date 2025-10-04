@@ -311,7 +311,7 @@ const HomePage = () => {
                             <h2>GET YOUR <strong>YATRI CABS</strong> APP NOW!</h2>
                             <p>USE CODE <strong>WELCOMEYATRI</strong> AND GET <strong>FLAT 05%</strong> OFF* ON YOUR FIRST INTERCITY RIDE</p>
                             <div className="app-buttons-container footer-app-buttons">
-                                <Image src="/first_frame_download_now.png" layout="fill" objectFit="contain" alt="Download on Google Play and App Store" />
+                                <Image src="/First_frame_download_now.png" layout="fill" objectFit="contain" alt="Download on Google Play and App Store" />
                             </div>
                         </div>
                     </div>
