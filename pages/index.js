@@ -32,25 +32,29 @@ const HomePage = () => {
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
             </Head>
             
-      <header className="main-header">
-          <div className="logo-container">
-            <Image src="/logo.svg" alt="Yatri Cabs Logo" layout="fill" objectFit="contain" />
-          </div>
-        <div className="contact-info">
-            <div className="contact-logo-container">
-                <Image src="/24by7 logo.svg" alt="24x7 Support" layout="fill" objectFit="contain"/>
-            </div>
-        </div>
-        <div className="header-actions">
-            <div className="header-action-icon">
-                <Image src="/nav_download_img.svg" alt="Download App" layout="fill" objectFit="contain"/>
-            </div>
-            <div className="header-action-icon">
-                <Image src="/nav_hi_rahul.png" alt="User Profile" layout="fill" objectFit="contain"/>
-            </div>
-        </div>
-      </header>
-
+            <header className="main-header">
+                <div className="logo-container">
+                    <Image src="/logo.svg" alt="Yatri Cabs Logo" layout="fill" objectFit="contain" />
+                </div>
+                 <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+                    <div className="contact-info">
+                         <div className="contact-logo-container">
+                            <Image src="/24by7 logo.svg" alt="24/7 Support" layout="fill" objectFit="contain" />
+                        </div>
+                    </div>
+                    <div className="header-actions">
+                        <div className="header-action-icon">
+                            <Image src="/nav_download_img.svg" alt="Download App" layout="fill" objectFit="contain" />
+                        </div>
+                        <div className="header-action-icon">
+                            <Image src="/nav_hi_rahul.png" alt="User Profile" layout="fill" objectFit="contain" />
+                        </div>
+                    </div>
+                </div>
+                <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle navigation menu">
+                    <i className={isMenuOpen ? "fas fa-times" : "fas fa-bars"}></i>
+                </button>
+            </header>
 
             
             <main>
