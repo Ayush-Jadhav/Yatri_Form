@@ -36,9 +36,13 @@ const HomePage = () => {
             </Head>
             
             <header className="main-header">
-                <div className="logo-container">
-                    <Image src="/logo.svg" alt="Yatri Cabs Logo" layout="fill" objectFit="contain" />
-                </div>
+                
+                <Link href="/">
+                    <div className="logo-container">
+                        <Image src="/logo.svg" alt="Yatri Cabs Logo" layout="fill" objectFit="contain" />
+                    </div>
+                </Link>
+                
                 <div className="contact-info">
                     <div className="contact-logo-container">
                         <Image src="/24by7 logo.svg" alt="24x7 Support" layout="fill" objectFit="contain"/>
