@@ -338,11 +338,13 @@ const HomePage = () => {
                     </p>
                 </div>
                 <div className="footer-bottom">
+                    <Link href="/">
                     <div className="footer-logo">
                             <div className="footer-logo-container">
                                 <Image src="/logo.svg" alt="Yatri Cabs Footer Logo" layout="fill" objectFit="contain" />
                             </div>
                     </div>
+    <               </Link>
                     <nav className="footer-nav">
                         <a href="#">Home</a>
                         <a href="#">About</a>
