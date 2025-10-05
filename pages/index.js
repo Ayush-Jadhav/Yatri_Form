@@ -345,7 +345,7 @@ const HomePage = () => {
                             </div>
                         </Link>
                     </div>
-    <               
+                   
                     <nav className="footer-nav">
                         <a href="#">Home</a>
                         <a href="#">About</a>
