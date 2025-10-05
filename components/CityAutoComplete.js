@@ -20,7 +20,7 @@ const CityAutoComplete = ({ value, onChange, placeholder }) => {
     const GEOAPIFY_API_KEY = process.env.NEXT_PUBLIC_GEOAPIFY_API_KEY; 
 
     const fetchSuggestions = async (text) => {
-        if (text.length < 3) {
+        if (text.length < 1) {
             setSuggestions([]);
             return;
         }
